@@ -1,0 +1,34 @@
+{% extends "register/base.html" %}
+
+{% block content %}
+<table class="table table-borderless">
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Nom et Prénom</td>
+            <td>Téléphone</td>
+            <td>Niveau</td>
+            <td>
+                <a href="{% url 'etudiant_insert' %}" class="btn btn-outline-danger">
+                    <i class="fas fa-plus"></i> Ajouter Etudiant
+                </a>
+            </td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for etudiant in etudiant_list %}
+            <tr>
+                <td>{{etudiant.fullname}}</td>
+                <td>{{etudiant.mobile}}</td>
+                <td>{{etudiant.niveau}}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    <td>
+        <a href="{% url 'logout' %}" class="btn text-secondary px-0">
+            <div style="color: blue">
+                logout
+            </div>
+        </a>
+    </td>
+</table>
+{% endblock content %}
