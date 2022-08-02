@@ -15,7 +15,6 @@ def employee_list(request):
     return render(request, "register/employee_list.html",context)
 
 
-# la fonction ci-dessous permet de faire 1000 enregistrements dans la BD
 
 @login_required(login_url='/employee/login/')
 @allowed_users(allowed_roles=['admin'])
@@ -42,7 +41,6 @@ def etudiant_list(request):
     return render(request, "register/etudiant_list.html",context)
 
 
-# la fonction ci-dessous permet de faire 1000 enregistrements dans la BD
 
 @login_required(login_url='/employee/login/')
 @allowed_users(allowed_roles=['util'])
